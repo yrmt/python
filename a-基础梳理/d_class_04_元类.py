@@ -1,7 +1,7 @@
 """
 @author: yrmt
 @contact: butanoler@gmail.com
-@file: c_class_04_元类.py
+@file: d_class_04_元类.py
 @time: 2019/8/17
 """
 

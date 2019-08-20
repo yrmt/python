@@ -1,7 +1,7 @@
 """
 @author: yrmt
 @contact: butanoler@gmail.com
-@file: c_class_04_私有化.py
+@file: d_class_05_私有化.py
 @time: 2019/8/18
 """
 
