@@ -4,8 +4,7 @@
 @file: f_02_线程锁.py
 @time: 2019/8/23
 """
-import time
-from threading import Lock, Thread
+from threading import Lock, RLock
 from concurrent.futures import ThreadPoolExecutor
 
 # GIL 与 threading.Lock :
@@ -42,3 +41,28 @@ with ThreadPoolExecutor(3) as executor:
     executor.map(fn1, range(3))
 print(number)
 print('--------------------------------分隔线---------------------------')
+
+
+def sisuo():
+    lock_01 = Lock()
+    print("start lock01 -acquire 1")
+    lock_01.acquire()
+    print("start lock01 -acquire 2")
+    lock_01.acquire()  # 当第二次调用 acquire 时会等待第一次解锁，程序会卡死
+    print("start lock01 -acquire 3")
+
+
+# sisuo()  # 看效果调用
+print('--------------------------------分隔线---------------------------')
+r_lock = RLock()  # rlock 调用多少次 acquire 就需要调用释放多少次
+
+
+def suo_02():
+    print("start lock01 -acquire 1")
+    r_lock.acquire()
+    print("start lock01 -acquire 2")
+    r_lock.acquire()
+    print("start lock01 -acquire 3")
+
+
+suo_02()
