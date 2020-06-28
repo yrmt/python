@@ -76,3 +76,17 @@ graph.get_nodes()[7].set_fillcolor('#FFF2DD')
 graph.write_png("dot.png")
 # ------
 from sklearn.feature_selection import SelectKBest, f_classif  # 特征选择
+# -----
+# 归一化 -> 数据增强
+# 中心化（零均值化）与标准化（归一化）
+
+# --------------
+# 标准化（归一化）两种方法：
+# 1）min - max标准化（Min - MaxNormalization）
+# 也称为离差标准化，是对原始数据的线性变换，使结果值映射到[0 - 1]
+# 之间。转换函数如下：
+# 其中max为样本数据的最大值，min为样本数据的最小值。这种方法有个缺陷就是当有新数据加入时，可能导致max和min的变化，需要重新定义。
+# 2）Z - score标准化（0 - 1标准化）方法
+# 这种方法给予原始数据的均值（mean）和标准差（standard
+# deviation）进行数据的标准化。经过处理的数据符合标准正态分布，即均值为0，标准差为1。
+
